@@ -36,6 +36,13 @@ app.get('/ErrorExample', function(req, res, next){
     next(new Error('Random error!'));
 });
 
+
+const personRouter = require("./routes/personRouter")
+app.use("/persons", personRouter)
+
+const penaltyRouter = require("./routes/penaltyRouter")
+app.use("/penalties", penaltyRouter)
+
 // app.get('/pizzas', function(req, res) {
 //     res.send('This is not implemented now');
 // });
@@ -57,6 +64,10 @@ app.get('/ErrorExample', function(req, res, next){
 // });
 
 
+
+
+
+/*
 let PizzaModel = require('./libs/db').PizzaModel;
 
 app.get('/pizzas', function(req, res) {
@@ -161,3 +172,5 @@ app.delete('/pizzas/:id', function (req, res){
         });
     });
 });
+
+*/

@@ -14,4 +14,11 @@ function getLogger(module) {
     });
 }
 
+function printServerError(log, res, err) {
+    res.statusCode = 500
+    log.error(`Internal error(%d): %s ${res.statusCode} ${err.message}`);
+    return res.send({ error: "Server error"})
+}
+
 module.exports = getLogger;
+module.exports.printServerError = printServerError
