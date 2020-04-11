@@ -1,4 +1,5 @@
 const PenaltyModel = require("../libs/db").PenaltyModel
+const PersonModel = require("../libs/db").PersonModel
 const { printServerError } = require("../libs/log")
 const log = require("../libs/log")(module)
 
@@ -28,9 +29,23 @@ exports.getById = (req, res) => {
     })
 }
 
-exports.postPenalty = (req, res) => {
+exports.postPenalty = async(req, res) => {
     // res.send(`post penalty ${JSON.stringify(req.body)}`)
     
+    let personIsPresent = await PersonModel.findById(req.body.person, (err, person) => {
+        if(!person) {
+            return true
+        } else if(!err) {
+            return true
+        } else {
+            printServerError(log, res, err)
+        }
+    })
+
+    if(!personIsPresent) {
+        return res.send({ satus: "ERROR", message: "There is no such user" })
+    }
+
     const personToCreate = new PenaltyModel({
         person: req.body.person,
         sum:    req.body.sum,

@@ -29,16 +29,21 @@ const Credit = new Schema({
     percent:        { type: Number, required: true },
     date:           { type: Date, required: true },
     term:           { type: Number, required: true },
-    paymentDate:    { type: Date, get: () => date + term },
+    // paymentDate: (self) => { 
+    //     return new Date(self.date.getTime() + (self.term * 1000 * 86400)) 
+    // },
     repaymentDate:  { type: Date },
     person:         { type: mongoose.ObjectId, required: true },
     creditType:     { type: mongoose.ObjectId, required: true},
 })
+Credit.virtual("paymentDate").get(function() { 
+    return new Date(this.date.getTime() + (this.term * 1000 * 86400))
+})
 
-const CreditTypes = new Schema({
-    name:               { type: String, required: true},
-    percentRange:       { type: [Number], required: true },
-    paymentDateRange:   { type: [Number], required: true },
+const CreditType = new Schema({
+    name:           { type: String, required: true},
+    percentRange:   { type: [Number], required: true },
+    termRange:      { type: [Number], required: true },
 })
 
 const Penalty = new Schema({
@@ -53,10 +58,10 @@ const Penalty = new Schema({
 
 const PersonModel = mongoose.model('Person', Person);
 const CreditModel = mongoose.model('Credit', Credit);
-const CreditTypesModel = mongoose.model('CreditTypes', CreditTypes);
+const CreditTypeModel = mongoose.model('CreditTypes', CreditType);
 const PenaltyModel = mongoose.model('Penalty', Penalty);
 
 module.exports.PersonModel = PersonModel;
 module.exports.CreditModel = CreditModel;
-module.exports.CreditTypesModel = CreditTypesModel;
+module.exports.CreditTypeModel = CreditTypeModel;
 module.exports.PenaltyModel = PenaltyModel;

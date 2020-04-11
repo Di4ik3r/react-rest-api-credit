@@ -43,6 +43,12 @@ app.use("/persons", personRouter)
 const penaltyRouter = require("./routes/penaltyRouter")
 app.use("/penalties", penaltyRouter)
 
+const creditTypeRouter = require("./routes/creditTypeRouter")
+app.use("/credit-types", creditTypeRouter)
+
+const creditRouter = require("./routes/creditRouter")
+app.use("/credits", creditRouter)
+
 // app.get('/pizzas', function(req, res) {
 //     res.send('This is not implemented now');
 // });
