@@ -33,10 +33,10 @@ exports.postPerson = (req, res) => {
     
     const personToCreate = new PersonModel({
         name:           req.body.name,
-        propertyType:   req.body.propertyType,
+        // propertyType:   req.body.propertyType,
         address:        req.body.address,
         number:         req.body.number,
-        contactPerson:  req.body.contactPerson,
+        // contactPerson:  req.body.contactPerson,
     })
 
     personToCreate.save((err) => {
@@ -58,10 +58,10 @@ exports.putPerson = (req, res) => {
         } 
         
         person.name              = req.body.name            || person.name
-        person.propertyType      = req.body.propertyType    || person.propertyType
+        // person.propertyType      = req.body.propertyType    || person.propertyType
         person.address           = req.body.address         || person.address
         person.number            = req.body.number          || person.number
-        person.contactPerson     = req.body.contactPerson   || person.contactPerson
+        // person.contactPerson     = req.body.contactPerson   || person.contactPerson
         return person.save((err) => {
             if(!err) {
                 log.info("person updated")

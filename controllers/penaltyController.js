@@ -32,6 +32,8 @@ exports.getById = (req, res) => {
 exports.postPenalty = async(req, res) => {
     // res.send(`post penalty ${JSON.stringify(req.body)}`)
     
+    console.log(`post penalty ${JSON.stringify(req.body)}`)
+    
     let personIsPresent = await PersonModel.findById(req.body.person, (err, person) => {
         if(!person) {
             return true

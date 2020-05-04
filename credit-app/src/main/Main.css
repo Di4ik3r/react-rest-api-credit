@@ -1,0 +1,116 @@
+nav {
+	background: rgba(255, 0, 0, 0.431);
+}
+
+.persons {
+	margin: 10px 0px;
+	padding: 15px 0px;
+	background: rgba(255, 0, 0, 0.034);
+}
+
+.penalties-credits {
+	/* border: 1px solid green; */
+	/* padding: 15px 10px; */
+	padding: 0 30px;
+}
+
+.person {
+	margin: 10px 0;
+	padding: 5px 0;
+	background: rgba(255, 0, 0, 0.116);
+	cursor: pointer;
+}
+.person:hover {
+	background: rgba(255, 0, 0, 0.349);
+}
+.person-selected {
+	background: rgba(255, 0, 0, 0.507);
+}
+.person-selected:hover {
+	background: rgba(255, 0, 0, 0.607);
+}
+
+.header {
+	border-bottom: 2px solid black;
+}
+
+.penalty, .credit {
+	margin: 10px 0;
+	background: rgba(255, 0, 0, 0.096);
+}
+.penalty:hover, .credit:hover {
+	background: rgba(255, 0, 0, 0.349);
+}
+
+div {
+	transition: 0.2s ease-in-out;
+}
+button {
+	transition: 0.1s ease-in-out;
+	width: 100%;
+}
+/* .btn-remove {
+	padding: 0 5px;
+	border: none;
+	background: rgb(207, 0, 0);
+	color: white;
+}
+.btn-remove:hover {
+	background: green;
+} */
+
+.button {
+	padding: 0 15px;
+	margin: 0;
+	border: none;
+	background: rgb(207, 0, 0);
+	color: rgb(255, 160, 160);
+}
+.button:hover {
+	background: rgb(165, 0, 0);
+	color: white;
+}
+
+.penalties, .credits {
+	padding: 15px 0;
+	background: rgba(255, 0, 0, 0.061);	
+}
+.credits {
+	margin-top: 25px;
+}
+.credit {
+	height: 120px;
+	padding: 10px 5px;
+}
+
+.padding-0{
+	padding-right:0;
+	padding-left:0;
+}
+
+.main {
+	margin-top: 25px;
+}
+
+.add {
+	margin-top: 25px;
+}
+
+.penalty-single {
+	margin: 10px 15px;
+	padding: 25px 15px;
+	/* margin: 10px 0; */
+	background: rgba(255, 0, 0, 0.034);
+}
+.penalty-single:hover {
+	/* margin: 10px 0;
+	background: rgba(255, 0, 0, 0.096); */
+}
+
+input {
+	width: 100%;
+}
+
+.buttons {
+	margin-top: 15px;
+}
