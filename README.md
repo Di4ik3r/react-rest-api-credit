@@ -1,3 +1,3 @@
 Project structure:\
-	home dir: back \
-	|-------> credit-app: react
+	|-----> home dir: back \
+	|----------> credit-app: react
